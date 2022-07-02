@@ -1,0 +1,15 @@
+.dashboard-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+app-news{
+    width: 85%
+}
+
+app-weather{
+    position: fixed;
+    right: 0;
+    max-width: 15%;
+}
