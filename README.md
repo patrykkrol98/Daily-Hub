@@ -27,11 +27,11 @@ Daily Hub was created for personal use to aggregate news, weather status and tod
 
 ### Main page of application
 
-![Example screenshot](./img/img1.png)
+![Example screenshot](./img/img2.png)
 
 ### Todo with drag'n drop
 
-![Example screenshot](./img/img2.png)
+![Example screenshot](./img/img1.png)
 
 ## Setup
 
