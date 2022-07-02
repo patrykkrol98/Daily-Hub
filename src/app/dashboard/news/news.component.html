@@ -1,0 +1,43 @@
+<div class="selection-container">
+  <div class="selection">
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select (selectionChange)="onChangeCategory($event.value)">
+        <mat-option *ngFor="let category of categoryList" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="selection">
+    <mat-form-field appearance="fill">
+      <mat-label>Feed country</mat-label>
+      <mat-select (selectionChange)="onChangeCountry($event.value)">
+        <mat-option *ngFor="let country of countries" [value]="country.value">
+          {{ country.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="news-list">
+  <div *ngFor="let news of newsList">
+    <mat-card class="news-card">
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>{{ news.title }}</mat-card-title>
+        <mat-card-subtitle>{{ news.publishedAt | date }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="news.urlToImage" alt="Thumbnail of article" />
+      <mat-card-content>
+        <h4>{{ news.source.name }}</h4>
+        <p>{{ news.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>
+          <a href="{{ news.url }}">Read more</a>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>  
+</div>

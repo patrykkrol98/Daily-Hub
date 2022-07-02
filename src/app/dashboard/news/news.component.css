@@ -1,0 +1,21 @@
+.news-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.news-card {
+    margin: 5%;
+    max-width: 400px;
+}
+
+.header-image {
+    background-size: cover;
+}
+
+.selection-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2vw;
+}
