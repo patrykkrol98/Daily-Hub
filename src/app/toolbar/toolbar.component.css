@@ -1,0 +1,9 @@
+.toolbar-menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu-items > *{
+    margin-right: 1em;
+    cursor:pointer;
+}
