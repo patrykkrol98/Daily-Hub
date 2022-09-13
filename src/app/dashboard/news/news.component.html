@@ -30,7 +30,7 @@
         <mat-card-title>{{ news.title }}</mat-card-title>
         <mat-card-subtitle>{{ news.publishedAt | date }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="news.urlToImage" alt="Thumbnail of article" />
+      <img mat-card-image [src]="checkUrl(news.urlToImage)" alt="Thumbnail of article"  />
       <mat-card-content>
         <h4>{{ news.source.name }}</h4>
         <p>{{ news.description }}</p>

@@ -50,4 +50,8 @@ export class NewsComponent implements OnInit {
     this.currentCountry = country;
     this.getNews()
   }
+
+  checkUrl(url: string){
+    return url !== null ? url : '/assets/image.jpeg';
+  }
 }
