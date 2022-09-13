@@ -9,19 +9,33 @@ import { environment } from 'src/environments/environment';
 })
 export class WeatherService {
   constructor(private http: HttpClient) { }
-
+  getWeatherForCoordinates(lat: number, lon: number) {
+    const params = {
+      params: new HttpParams()
+        .set('lat', lat)
+        .set('lon', lon)
+        .set('units', 'metric')
+        .set('APPID', environment.WEATHER_API_KEY)
+    };
+    return this.getWeatherByParams(params)
+  }
   getWeatherForCity(city: string): Observable<any> {
-    const options = {
+    const params = {
       params: new HttpParams()
         .set('q', city)
         .set('units', 'metric')
         .set('APPID', environment.WEATHER_API_KEY)
     };
-    return this.http.get<any>(environment.WEATHER_API_URL, options).pipe(
+    return this.getWeatherByParams(params)
+  }
+
+  private getWeatherByParams(params: { params: HttpParams }): Observable<any> {
+    return this.http.get<any>(environment.WEATHER_API_URL, params).pipe(
       map(data => ({
         ...data,
         image: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
       }))
     );
   }
+
 }

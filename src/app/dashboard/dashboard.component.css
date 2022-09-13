@@ -1,15 +1,15 @@
 .dashboard-container{
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
-
-app-news{
-    width: 85%
+.feed{
+    font: 52px futura;
 }
-
-app-weather{
-    position: fixed;
-    right: 0;
-    max-width: 15%;
+.row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 36px;
 }

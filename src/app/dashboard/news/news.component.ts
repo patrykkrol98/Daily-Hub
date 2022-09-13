@@ -13,9 +13,9 @@ export class NewsComponent implements OnInit {
   currentCategory = "general";
   currentCountry = "pl";
   countries = [
-    {value: 'pl', viewValue: 'Polska'},
-    {value: 'gb', viewValue: 'Wielka Brytania'},
-    {value: 'us', viewValue: 'Stany Zjednoczone'},
+    { value: 'pl', viewValue: 'Poland' },
+    { value: 'gb', viewValue: 'Great Britain' },
+    { value: 'us', viewValue: 'USA' },
   ];
   categoryList: string[] = [
     "general",
@@ -33,18 +33,21 @@ export class NewsComponent implements OnInit {
     this.getNews();
   }
 
-  
-  getNews() {
-    this.news.getNewsByCountryAndCategory(this.currentCountry, this.currentCategory).subscribe(news => {this.newsList = news});
+  isSelected(selection: string){
+    return (this.currentCountry == selection || this.currentCategory == selection)
   }
 
-  onChangeCategory(category: string){
+  getNews() {
+    this.news.getNewsByCountryAndCategory(this.currentCountry, this.currentCategory).subscribe(news => { this.newsList = news });
+  }
+
+  onChangeCategory(category: string) {
     this.currentCategory = category;
     this.getNews()
   }
 
-  onChangeCountry(country: string){
-    this.currentCountry = country;  
+  onChangeCountry(country: string) {
+    this.currentCountry = country;
     this.getNews()
   }
 }

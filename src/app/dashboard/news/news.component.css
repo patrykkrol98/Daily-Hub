@@ -15,7 +15,11 @@
 
 .selection-container {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 2vw;
+    margin: 16px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.divider{
+    margin: 8px;
 }
